@@ -1,0 +1,30 @@
+#header a{
+	font-family:Fine College;
+	font-size: 50px;
+	font-weight: bolder;
+	color: white;
+}
+#header{
+	background: black;
+	padding: 0 5%;
+}
+
+.navbar-form input:focus{
+	width: 400px;
+}
+#menu{
+	background: #A134D8;
+	color: white;
+	font-weight: bold;
+	padding: 0;
+}
+
+.navbar ul{
+	margin: 0 5%;
+}
+.navbar ul li {
+	cursor: pointer;
+}
+.navbar ul li:hover{
+	background: #D69FF2
+}
