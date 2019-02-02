@@ -7,6 +7,7 @@
 #header{
 	background: black;
 	padding: 0 5%;
+	color: white;
 }
 
 .navbar-form input:focus{
@@ -14,15 +15,13 @@
 }
 #menu{
 	background: #A134D8;
-	color: white;
-	font-weight: bold;
+	font-weight: bolder;
 	padding: 0 5%;
-
 }
-
 .navbar ul li {
 	cursor: pointer;
+	text-align: center;
 }
 .navbar ul li:hover{
-	background: #D69FF2
+	background: #D69FF2;
 }
