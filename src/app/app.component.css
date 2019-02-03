@@ -1,17 +1,20 @@
-#header a{
+.navbar-brand{
 	font-family:Fine College;
 	font-size: 50px;
 	font-weight: bolder;
-	color: white;
 }
-#header{
+.navbar{
 	background: black;
 	padding: 0 5%;
-	color: white;
+	color: #F0D3FF;
 }
-
-.navbar-form input:focus{
-	width: 400px;
+.cart{
+	margin: auto;
+	margin-left: 10px;
+	cursor: pointer;
+}
+a.cart :hover{
+	color: #D69FF2;
 }
 #menu{
 	background: #A134D8;
@@ -24,4 +27,17 @@
 }
 .navbar ul li:hover{
 	background: #D69FF2;
+}
+.product{
+	border: 2px solid black;
+	display: block;
+	width: 33.33%;
+	float: left;
+	height: 250px;
+	padding: 10px;
+	text-align: center;
+	background:#A134D8;
+}
+.product img{
+	height: 60%;
 }
