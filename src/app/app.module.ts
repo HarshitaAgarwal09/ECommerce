@@ -11,6 +11,8 @@ import { UProductsComponent } from './user/uproducts/uproducts.component';
 import { UProductDetailsComponent } from './user/uproduct-details/uproduct-details.component';
 import { EditProductComponent } from './admin/edit-product/edit-product.component';
 import { AddProductComponent } from './admin/add-product/add-product.component';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { AddProductComponent } from './admin/add-product/add-product.component';
     UProductsComponent,
     UProductDetailsComponent,
     EditProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

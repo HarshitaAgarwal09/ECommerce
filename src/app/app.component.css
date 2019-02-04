@@ -29,14 +29,21 @@ a.cart :hover{
 	background: #D69FF2;
 }
 .product{
-	
+	height: 350px;
 	display: block;
 	width: 33.33%;
 	float: left;
-	height: 250px;
 	padding: 10px;
 	text-align: center;
+	cursor: pointer;
 }
 .product img{
-	height: 70%;
+	height: 50%;
+}
+.ProductsFilter{
+	padding: 15px 25%; 
+}
+.ProductsFilter i{
+	padding: 10px 10px;
+	background: white;
 }

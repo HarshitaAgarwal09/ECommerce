@@ -12,10 +12,12 @@ export class AppComponent implements OnInit{
   products:IProduct[];
   constructor(private ps: ProductsService){
   }
-
   ngOnInit() {
   	this.products = this.ps.getProducts();
   	console.log(this.products);
   }
+ getProductById(id:number){
+
+ } 
 
 }
