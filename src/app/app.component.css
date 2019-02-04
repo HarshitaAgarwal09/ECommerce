@@ -29,15 +29,14 @@ a.cart :hover{
 	background: #D69FF2;
 }
 .product{
-	border: 2px solid black;
+	
 	display: block;
 	width: 33.33%;
 	float: left;
 	height: 250px;
 	padding: 10px;
 	text-align: center;
-	background:#A134D8;
 }
 .product img{
-	height: 60%;
+	height: 70%;
 }
