@@ -11,8 +11,9 @@ import { UProductsComponent } from './user/uproducts/uproducts.component';
 import { UProductDetailsComponent } from './user/uproduct-details/uproduct-details.component';
 import { EditProductComponent } from './admin/edit-product/edit-product.component';
 import { AddProductComponent } from './admin/add-product/add-product.component';
-import { FilterPipe } from './filter.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 import { FormsModule }   from '@angular/forms';
+import { OrderByPipe } from './pipe/order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule }   from '@angular/forms';
     UProductDetailsComponent,
     EditProductComponent,
     AddProductComponent,
-    FilterPipe
+    FilterPipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductsService} from './products.service';
+import {ProductsService} from './service/products.service';
 import{IProduct} from './product';
 
 @Component({
@@ -19,5 +19,8 @@ export class AppComponent implements OnInit{
  getProductById(id:number){
 
  } 
+ onclickBuy(id:number){
+  
+ }
 
 }

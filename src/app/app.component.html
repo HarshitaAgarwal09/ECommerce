@@ -23,7 +23,7 @@
 
 <div class="collapse navbar-collapse" id="navbarmenu">
 	<ul class="navbar-nav mr-auto"> 
-		<li class="nav-item"><a class="nav-link">HOME</a></li>
+		<li class="nav-item"><a href="" class="nav-link">HOME</a></li>
 		<li class="nav-item"><a class="nav-link">ADMIN</a></li>
 		<li class="nav-item"><a class="nav-link">ABOUT</a></li>
 		<li class="nav-item"><a class="nav-link">CONTACT</a></li>
@@ -35,7 +35,7 @@
 </div>
 </nav>
 </header>
-<div id="carouselSlide" class="carousel slide" data-ride="carousel">
+<!-- <div id="carouselSlide" class="carousel slide" data-ride="carousel">
  	
  	<ul class="carousel-indicators">
     	<li data-target="#carouselSlide" data-slide-to="0" class="active"></li>
@@ -61,7 +61,7 @@
   	<a class="carousel-control-next" href="#carouselSlide" data-slide="next">
     	<span class="carousel-control-next-icon"></span>
   	</a>
-</div>
+</div> -->
 
 <div class="ProductsFilter"> 
 	<div class="input-group">
@@ -73,12 +73,13 @@
  <div id="productsSlide" class="carousel slide" data-ride="carousel">
  	<div class="carousel-inner">
  		<div>
- 		 	<div *ngFor="let prod of products | filter: searchText" >
+ 		 	<div *ngFor="let prod of products | filter: searchText"> <!-- | orderBy:name " > -->
  				<div class="product">
  					<img src="{{prod.imgUrl}}" alt="">
  					<h5>{{prod.name}}</h5>
  					<p>Rs {{prod.price}}</p>
- 					<button class="btn btn-info">See Details</button>
+ 					<button class="btn btn-info">See Details</button><br>
+ 					<button class="btn btn-danger" [routerLink]="['/cart', { id:prod.id } ]" >Buy Now</button>
  			</div>
  		</div>	
  	</div>

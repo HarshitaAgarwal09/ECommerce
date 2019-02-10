@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{IProduct} from './product';
+import{IProduct} from '../product';
 @Injectable({
   providedIn: 'root'
 })
@@ -43,4 +43,9 @@ products:IProduct[] = [{
   getProducts(){
   	return this.products;
   }
+  getProductById(id : number) {
+  	for (var i = 0; i < this.products.length; i++) {
+            if (this.products[i].id == id)    return this.products[i];
+        }
+    }
 }
