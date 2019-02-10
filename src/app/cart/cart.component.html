@@ -1,7 +1,10 @@
+<h5>CART </h5>
 <p>
  	Total Price: {{total}}
 </p>
 <div *ngFor="let item of items">
-  	<p>{{item.product?.name}}{{item.product?.price}} {{item?.quantity}}</p>  	
+  	<p><button class="btn btn-danger" (click)="remove(item.product.id)">X</button>
+ 
+  	{{item.product.name}}{{item.product.price}} {{item.quantity}}</p>  	
 
 </div>
