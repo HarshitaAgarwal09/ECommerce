@@ -25,8 +25,9 @@ export class CartComponent implements OnInit {
   		  		product: this.ps.getProductById(id),
 				quantity: 1
 			}
-		if(localStorage.getItem('cart')!=null){
-  			JSON.parse(localStorage.getItem('cart'));
+		
+		if(localStorage.getItem('cart')!=null){  			
+  			cart = JSON.parse(localStorage.getItem('cart'));
    			index = -1;
   			for(var i = 0 ; i < cart.length ; i++){
   				if(cart[i].product.id == id){
@@ -34,7 +35,6 @@ export class CartComponent implements OnInit {
   				}
   			}	
   		}
-  		else{}
   		if(index == -1){ 
   			cart.push(item);
   		}
@@ -43,23 +43,25 @@ export class CartComponent implements OnInit {
   			item.quantity+=1;
   			cart[index]=item;
   		}	
-  		console.log(cart);
+  		//console.log(cart.length);
   		localStorage.setItem("cart", JSON.stringify(cart))
+  		//console.log(cart);
   		this.loadCart();
   	})
   }
   
   loadCart(){
- /* 	this.total = 0;
-		this.items = [];
-		let cart = JSON.parse(localStorage.getItem('cart'));
-		for (var i = 0; i < cart.length; i++) {
-			let item = JSON.parse(cart[i]);
+  	this.total = 0;
+  	this.items = [];
+  	console.log(JSON.parse(localStorage.getItem('cart')));
+	let cart:any[] = JSON.parse(localStorage.getItem('cart'));
+	for (var i = 0; i < cart.length; i++) {
+			let item = cart[i];
 			this.items.push({
 				product: item.product,
 				quantity: item.quantity
 			});
 			this.total += item.product.price * item.quantity;
-		}*/
+		}
   }
 }
