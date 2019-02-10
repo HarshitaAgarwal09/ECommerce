@@ -19,15 +19,16 @@ export class CartComponent implements OnInit {
   ngOnInit() { 
   	this.activatedRoute.params.subscribe(params =>{
 		let index:number = -1;
-  		var id:number = params['id'];
+  		var id:number= params['id'];
   		let cart = [];		
   		var item:Item =	{		
   		  		product: this.ps.getProductById(id),
 				quantity: 1
 			}
 		
-		if(localStorage.getItem('cart')!=null){  			
-  			cart = JSON.parse(localStorage.getItem('cart'));
+		if(localStorage.getItem('cartstore')!=null){  			
+  			cart = JSON.parse(localStorage.getItem('cartstore'));
+   			
    			index = -1;
   			for(var i = 0 ; i < cart.length ; i++){
   				if(cart[i].product.id == id){
@@ -43,9 +44,7 @@ export class CartComponent implements OnInit {
   			item.quantity+=1;
   			cart[index]=item;
   		}	
-  		//console.log(cart.length);
-  		localStorage.setItem("cart", JSON.stringify(cart))
-  		//console.log(cart);
+  		localStorage.setItem("cartstore",JSON.stringify(cart))
   		this.loadCart();
   	})
   }
@@ -53,8 +52,7 @@ export class CartComponent implements OnInit {
   loadCart(){
   	this.total = 0;
   	this.items = [];
-  	console.log(JSON.parse(localStorage.getItem('cart')));
-	let cart:any[] = JSON.parse(localStorage.getItem('cart'));
+	let cart:any[] = JSON.parse(localStorage.getItem('cartstore'));
 	for (var i = 0; i < cart.length; i++) {
 			let item = cart[i];
 			this.items.push({
