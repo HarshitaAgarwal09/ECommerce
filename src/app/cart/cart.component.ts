@@ -12,7 +12,7 @@ import {ProductsService} from '../service/products.service';
 })
 export class CartComponent implements OnInit {
 	items: Item[] = [];
-	total :number =0;
+	total :number = 0;
 	item:Item;
   	id:number;
  	
@@ -25,24 +25,28 @@ export class CartComponent implements OnInit {
   	})
   }
 
-  foo=false;
+  index=-1;
   
   loadCart(){
   	for(var i = 0 ; i < this.items.length ; i++){
   		if(this.items[i].product.id == this.id){
-  			this.items[i].quantity+=1;
-  			this.foo = true;
- 		 	console.log(this.items[i]);
-
+  			this.index = i;
   		}
   	}
-  	if(this.foo==false){
+
+  	if(this.index == -1){
   		this.items.push({
   				product: this.ps.getProductById(this.id),
 				quantity: 1
 			});
-  		console.log(this.foo);
+  		this.index=this.items.length-1;
   	}
-  	console.log(this.items);
+  	else {
+  		this.items[this.index].quantity+=1;
+  	}
+  	this.total+=this.items[this.index].product.price;
+  	this.index = -1;
+  	console.log(this.total);
+
   }
 }
